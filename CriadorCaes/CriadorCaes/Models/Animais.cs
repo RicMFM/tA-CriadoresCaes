@@ -42,10 +42,20 @@ namespace CriadorCaes.Models {
        * ++++++++++++++++++++++++++++++++++++++++++ 
        */
 
+      /// <summary>
+      /// FK para o Criador do cão/cadela
+      /// </summary>
       [ForeignKey(nameof(Criador))]
       public int CriadorFK { get; set; }
       public Criadores Criador { get; set; } // efetivamente, esta é q é a FK, para a EF
-
+      /*
+       * o uso de [anotadores] serve para formatar o comportamento
+       * dos 'objetos' por ele referenciados
+       * estes 'objetos' podem ser:
+       *    - atributos
+       *    - funções (métodos)
+       *    - classes
+       * */
 
 
    }
