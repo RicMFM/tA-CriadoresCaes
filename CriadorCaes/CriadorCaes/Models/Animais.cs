@@ -1,4 +1,6 @@
-﻿namespace CriadorCaes.Models {
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CriadorCaes.Models {
 
    /// <summary>
    /// descrição dos cães
@@ -34,6 +36,16 @@
       /// LOP do registo do cão/cadela
       /// </summary>
       public string NumLOP { get; set; }
+
+      /* ++++++++++++++++++++++++++++++++++++++++++ 
+       * Criação das chaves forasteiras
+       * ++++++++++++++++++++++++++++++++++++++++++ 
+       */
+
+      [ForeignKey(nameof(Criador))]
+      public int CriadorFK { get; set; }
+      public Criadores Criador { get; set; } // efetivamente, esta é q é a FK, para a EF
+
 
 
    }
